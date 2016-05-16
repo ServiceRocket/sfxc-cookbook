@@ -1,1 +1,0 @@
-default["sfjc"]["config"]["s3_bucket_name"] = "sfjc-config"
