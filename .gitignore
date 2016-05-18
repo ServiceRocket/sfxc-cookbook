@@ -1,1 +1,4 @@
 .idea/
+Berksfile.lock
+sfxc-cookbook-*.tar.gz
+cookbooks-*.tar.gz

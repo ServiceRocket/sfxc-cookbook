@@ -1,9 +1,11 @@
+include_recipe 'newrelic::server_monitor_agent'
+
 # Adds the user +newrelic+ to the group +docker+ to enable New Relic Docker Server Monitoring.
 # This assumes that the New Relic Server Monitoring recipe +newrelic::default+ has been run before and therefore the
 # user +newrelic+ already exists.
 #
 # Refer to the New Relic cookbook and New Relic guide for further information:
-# https://github.com/escapestudios-cookbooks/newrelic
+# https://github.com/djoos-cookbooks/newrelic
 # https://docs.newrelic.com/docs/servers/new-relic-servers-linux/installation-configuration/enabling-new-relic-servers-docker
 group "docker" do
   action :modify
