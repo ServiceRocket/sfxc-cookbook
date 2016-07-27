@@ -24,6 +24,10 @@ Release this cookbook
 
 1.  Bump the cookbook version in `metadata.rb` according to [semver](http://semver.org/) rules.
 
+1.  Make sure cookbook dependencies defined in `metadata.rb` are installed by running:
+
+        > berks install
+
 1.  Build a Berkshelf package using
 
         > berks package sfxc-cookbook-[version].tar.gz

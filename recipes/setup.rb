@@ -30,3 +30,18 @@ end
 execute "Restart New Relic Server Monitoring daemon" do
   command 'service newrelic-sysmond restart'
 end
+
+# Fetches Spotify's docker garbage collector script from github.
+remote_file "/usr/sbin/docker-gc" do
+  source 'https://raw.githubusercontent.com/spotify/docker-gc/master/docker-gc'
+  mode '0755'
+  action :create
+end
+
+# Defines cronjob to run Docker GC script daily 8AM UTC.
+cron "docker-gc" do
+  minute 0
+  hour 8
+  command '/usr/sbin/docker-gc'
+  action :create
+end
